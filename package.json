@@ -1,6 +1,6 @@
 {
   "name": "multi-tenant-booking-platform",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Backend-first multi-tenant booking platform for service businesses",
   "main": "dist/index.js",
   "scripts": {
@@ -13,14 +13,17 @@
     "format:check": "prettier --check \"src/**/*.{ts,tsx,json,css,md}\"",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
-    "test:unit": "vitest run --filter unit",
-    "test:integration": "vitest run --filter integration",
+    "test:unit": "vitest run tests/unit",
+    "test:integration": "vitest run tests/integration",
     "test:watch": "vitest watch",
+    "test:coverage": "vitest run --coverage",
     "db:generate": "drizzle-kit generate:pg",
     "db:migrate": "tsx src/infrastructure/db/migrate.ts",
     "db:seed": "tsx src/infrastructure/db/seed.ts",
     "db:studio": "drizzle-kit studio",
-    "clean": "rm -rf dist .next node_modules"
+    "db:rls:apply": "tsx src/infrastructure/db/rls.ts",
+    "clean": "rm -rf dist .next node_modules",
+    "clean:db": "rm -rf migrations/*.sql"
   },
   "keywords": [
     "booking",
@@ -42,6 +45,8 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "stripe": "^14.0.0",
+    "uuid": "^9.0.0",
+    "winston": "^3.11.0",
     "zod": "^3.22.0"
   },
   "devDependencies": {
@@ -49,6 +54,7 @@
     "@types/pg": "^8.10.0",
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.0",
+    "@types/uuid": "^9.0.0",
     "@typescript-eslint/eslint-plugin": "^6.19.0",
     "@typescript-eslint/parser": "^6.19.0",
     "@vitejs/plugin-react": "^4.2.1",
