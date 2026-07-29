@@ -1,0 +1,68 @@
+# Code Owners
+
+This file defines individuals or teams that are responsible for code in specific directories or files.
+
+## Format
+
+Each line is a file pattern followed by one or more owners. Owners can be:
+- GitHub usernames (e.g., @junnaid-4)
+- GitHub teams (e.g., @org/backend-team)
+
+## Ownership Rules
+
+# Global defaults
+* @junnaid-4
+
+# Documentation
+/docs/** @junnaid-4
+/README.md @junnaid-4
+/CHANGELOG.md @junnaid-4
+
+# Configuration
+/.github/** @junnaid-4
+/package.json @junnaid-4
+/tsconfig.json @junnaid-4
+
+# Database
+/migrations/** @junnaid-4
+/src/infrastructure/db/** @junnaid-4
+
+# API
+/src/app/api/** @junnaid-4
+
+# Domains
+/src/domains/** @junnaid-4
+
+# Infrastructure
+/src/infrastructure/** @junnaid-4
+
+# Shared utilities
+/src/shared/** @junnaid-4
+
+# Tests
+/tests/** @junnaid-4
+
+# Environment
+.env.example @junnaid-4
+
+---
+
+## Review Requirements
+
+- All changes require at least one approval from a code owner
+- Code owners are responsible for:
+  - Reviewing pull requests for their areas
+  - Ensuring changes follow architecture patterns
+  - Verifying security and performance implications
+  - Maintaining test coverage
+
+## Emergency Bypass
+
+In case of critical security fixes or production incidents, the repository owner may bypass code owner approval with documented justification.
+
+## Adding New Owners
+
+To add new code owners:
+1. Update this file with the new owner and their areas
+2. Ensure the new owner understands their responsibilities
+3. Document the change in the changelog
